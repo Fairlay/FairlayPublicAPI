@@ -3,17 +3,22 @@
 **************************************************************************************  
 
 
-This is just a very limited and free service to scrape our markets. For all post requests (creating / changing markets and orders) use the paid API.
+This is a free service to scrape all markets on Fairlay. For all post requests (creating / changing markets and orders) use the paid API.
 
 - the data is updated every 5 seconds
 - use the "SoftChangedAfter" parameter for incremental calls. Retrieve the server time and only query markets that have changed after your last request.
 
-- 12 incremental calls are allowed per minute
-- 1 call with an old or without the SoftChangedAfter parameter  are allowed per IP and per minute
-- accept gzip,deflate in your header
+- 12 incremental calls are allowed per minute (the SoftChangedAfter parameter must be set to not more than 30 seconds in the past)
+- 1 call without a proper SoftChangedAfter parameter  is allowed per IP and per minute
+- you have to accept gzip,deflate in your header
 - when using the markets request make sure that your uri is not too long
 - all times are UTC
-- strings are not case sensitive
+- strings are not case sensitiv
+
+For more examples how this API should be used together with our paid API, please take a look at our sample clients
+- https://github.com/Fairlay/CSharpSampleClient/blob/master/GetAPI.cs
+- https://github.com/Fairlay/PythonSampleClient/blob/master/client.py#L291
+
 
 
 
@@ -67,13 +72,13 @@ Examples:
 
 returns the first  100 non-empty soccer markets, where one of the runners is Portugal, the Title does not contain the words "Corners" or "Throwin" and the period of the match is full-time.
 
-([http://31.172.83.181:8080/free/markets/{"Cat":2 ,"TypeOr":[1,2],"SoftChangedAfter":"2016-06-01T12:01:30", "OnlyActive":true, "ToID":10000}])
+http://31.172.83.181:8080/free/markets/{"Cat":2,"TypeOr":[1,2],"SoftChangedAfter":"2016-06-01T12:01:30","OnlyActive":true,"ToID":10000}  
 
 Returns all active tennis matches of the type Over/Under or Outright where the odds or market data have changed after  June 1st  12:01:30pm 
 
 
 
-http://31.172.83.181:8080/free/markets/{"OnlyActive":true, "NoZombie":true, "ToID":100000}
+http://31.172.83.181:8080/free/markets/{"OnlyActive":true,"NoZombie":true,"ToID":100000}
 
 Returns all active non-empty markets.
 
@@ -86,12 +91,19 @@ find the sport ID below.
 
 Example for all soccer competitions: http://31.172.83.181:8080/free/comps/1
 
+access markets on fairlay
+*************************
+
+You can use the market ids to access any market on fairlay directly
+
+https://www.fairlay.com/market/72633292476
+
 
 A2)  DATA Fields
 
 
  enum MarketPeriod
-        {
+        
             UNDEFINED,
             FT,
             FIRST_SET,
@@ -109,10 +121,10 @@ A2)  DATA Fields
             SECOND_PERIOD,
             THIRD_PERIOD,
            
-        }
+        
 
 enum StatusType
-        {
+        
             ACTIVE,
             INPLAY,
             SUSPENDED,
@@ -120,10 +132,10 @@ enum StatusType
             SETTLED,
             CANCELLED
 
-        }
+        
 
 enum MarketType
-        {
+        
             M_ODDS,
             OVER_UNDER,
             OUTRIGHT,
@@ -140,20 +152,13 @@ enum MarketType
 
             
 
-        }
+        
 
 
 enum SettleType
-        {
+        
             BINARY,
             DECIMAL
-
-        }
-
-
-
-
-
 
 
 Categories:
