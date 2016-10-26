@@ -27,14 +27,17 @@ http://31.172.83.53  is an alternate server with the same functionality.
 
 
 
-server time
+
 ***************************
+#server time
+
 http://31.172.83.181:8080/free/time
 
 returns the server time in ticks.
 
-markets
+
 ********************************************
+#markets
 
 Usage:
 
