@@ -41,21 +41,30 @@ marketfilter object looks like this:
 {"Cat":0,"RunnerAND":["Arsenal","Chelsea"],"TitleAND":null,"TitleNOT":["Corners","Throwin"],"Comp":"Premier League","TypeOR":null,"PeriodOR":[1],"SettleOR":null,"Descr":null,"ChangedAfter":"2016-01-01T22:01:01","SoftChangedAfter":"0001-01-01T00:00:00","OnlyActive":false,"NoZombie":false,"FromClosT":"2016-05-01T00:00:00","ToClosT":"0001-01-01T00:00:00","FromID":0,"ToID":10000}
 
 Cat: is the Category, see A2) for more information. 0 queries all Categories.
+
 RunnerAND: All strings provided must be contained in at least one name of one runners of the market.
+
 TitleNOT: = None of the strings may appear in the title of the market
 Comp:   if not null, must equal the competition's name.
+
 TypeOr:   Only the Market Types given will be returned. If set to null, all market types will be returned. See A2) for Market Types
+
 PeriodOr: Similiar to TypeOr See A2) for Market Periods
 SettleOr: See A2)  for Settlement Types
-NoZombie: if set to true, no empty markets will be returned (without any open order)
-Descr:   The given string must appear in the market description.
-ChangedAfter:   Only returns markets, where the meta data was changed after the given date. Usually the Closing and Settlement Dates of a market is the only data that changes.
-SoftChangedAfter:  returns all markets, where either the the meta data or the orderbook has changed since the given date.
 
+NoZombie: if set to true, no empty markets will be returned (without any open order)
+
+Descr:   The given string must appear in the market description.
+
+ChangedAfter:   Only returns markets, where the meta data was changed after the given date. Usually the Closing and Settlement
+Dates of a market is the only data that changes.
+
+SoftChangedAfter:  returns all markets, where either the the meta data or the orderbook has changed since the given date.
 
 FromClosT:  only return markets where the closing time is greater than the given one.
 
-FromID:  for paging requests. 
+FromID:  for paging requests.
+
 ToID (default 300 if not set):   should be set.
 
 Returns:  json encoded list of markets that apply to the given filter. 
