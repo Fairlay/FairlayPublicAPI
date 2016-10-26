@@ -1,6 +1,4 @@
-**************************************************************************************
-***************API DOCUMENTATION v0 - Fairlay Node*****************
-**************************************************************************************  
+#API DOCUMENTATION v0 - Fairlay Node
 
 
 This is a free service to scrape all markets on Fairlay. For all post requests (creating / changing markets and orders) use the paid API.
@@ -26,17 +24,12 @@ Please feel free to comment and make suggestions.
 http://31.172.83.53  is an alternate server with the same functionality.
 
 
-
-
-***************************
-#server time
+##server time
 
 http://31.172.83.181:8080/free/time
 
 returns the server time in ticks.
 
-
-********************************************
 #markets
 
 Usage:
@@ -68,7 +61,7 @@ ToID (default 300 if not set):   should be set.
 Returns:  json encoded list of markets that apply to the given filter. 
 
 
-Examples: 
+####Examples: 
 
  http://31.172.83.181:8080/free/markets/{"Cat":1,"NoZombie":true,"RunnerAND":["Portugal"], "TitleNOT":["Corners","Throwin"], "PeriodOR":[1],"FromID":0,"ToID":100}
 
@@ -85,8 +78,7 @@ http://31.172.83.181:8080/free/markets/{"OnlyActive":true,"NoZombie":true,"ToID"
 
 Returns all active non-empty markets.
 
-competitons
-******************
+##competitons
 
 http://31.172.83.181:8080/free/comps/[sportid]
 
@@ -94,15 +86,14 @@ find the sport ID below.
 
 Example for all soccer competitions: http://31.172.83.181:8080/free/comps/1
 
-access markets on fairlay
-*************************
+##access markets on fairlay
 
 You can use the market ids to access any market on fairlay directly
 
 https://www.fairlay.com/market/72633292476
 
 
-A2)  DATA Fields
+## A2) DATA Fields
 
 
  enum MarketPeriod
