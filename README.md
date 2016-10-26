@@ -45,11 +45,13 @@ Cat: is the Category, see A2) for more information. 0 queries all Categories.
 RunnerAND: All strings provided must be contained in at least one name of one runners of the market.
 
 TitleNOT: = None of the strings may appear in the title of the market
+
 Comp:   if not null, must equal the competition's name.
 
 TypeOr:   Only the Market Types given will be returned. If set to null, all market types will be returned. See A2) for Market Types
 
 PeriodOr: Similiar to TypeOr See A2) for Market Periods
+
 SettleOr: See A2)  for Settlement Types
 
 NoZombie: if set to true, no empty markets will be returned (without any open order)
