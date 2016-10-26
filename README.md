@@ -1,5 +1,5 @@
 **************************************************************************************
-***************API DOCUMENTATION v0 alpha - Fairlay Node*****************
+***************API DOCUMENTATION v0 - Fairlay Node*****************
 **************************************************************************************  
 
 
@@ -67,7 +67,7 @@ Examples:
 
 returns the first  100 non-empty soccer markets, where one of the runners is Portugal, the Title does not contain the words "Corners" or "Throwin" and the period of the match is full-time.
 
-http://31.172.83.181:8080/free/markets/{"Cat":2 ,"TypeOr":[1,2],"SoftChangedAfter":"2016-06-01T12:01:30", "OnlyActive":true, "ToID":10000}
+([http://31.172.83.181:8080/free/markets/{"Cat":2 ,"TypeOr":[1,2],"SoftChangedAfter":"2016-06-01T12:01:30", "OnlyActive":true, "ToID":10000}])
 
 Returns all active tennis matches of the type Over/Under or Outright where the odds or market data have changed after  June 1st  12:01:30pm 
 
