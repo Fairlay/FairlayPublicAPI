@@ -23,6 +23,10 @@ For more examples how this API should be used together with our paid API, please
 Please feel free to comment and make suggestions. 
 http://31.172.83.53  is an alternate server with the same functionality.
 
+You may also replace the subaccount free with free2, free3,..., free9
+
+Dedicated subaccounts are also handed out on request.
+
 
 ##server time
 
