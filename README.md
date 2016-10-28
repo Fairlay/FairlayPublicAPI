@@ -46,6 +46,8 @@ marketfilter object looks like this:
 
 Cat: is the Category, see A2) for more information. 0 queries all Categories.
 
+TitleAND: All strings must appear in the title of the market. 
+
 RunnerAND: All strings provided must be contained in at least one name of one runner of the market.
 
 TitleNOT: None of the strings may appear in the title of the market
