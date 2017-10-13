@@ -1,5 +1,6 @@
 This is a free service to scrape all markets on Fairlay. For all POST requests (creating/changing markets and orders) use the paid [Private API](../Private-API).
-* The data is updated every 5 seconds
+* The data on the free servers is updated every 5 seconds 
+* For Professional Users there exist private servers with an update frequency of half a second. Please contact   fairlay+api@protonmail.com to get access.
 * You have to accept GZIP, DEFLATE in your HEADER
 * Use the __*SoftChangedAfter*__ parameter for incremental calls. Retrieve the server time and only query markets that have changed after your last request
 * 12 incremental calls are allowed per minute (the __*SoftChangedAfter*__ parameter must be set to not more than 30 seconds in the past)
@@ -13,7 +14,7 @@ For more examples how this API should be used together with our paid API, please
 Please feel free to comment and make suggestions.
 
 
-## Servers
+## Free Servers
 
 > `http://31.172.83.181:8080` *(used by default for all Public API calls)*<br/>
 > `http://31.172.83.53:8080` *(is an alternate server with the same functionality, also used for all [Private API](../private-api) calls)*
