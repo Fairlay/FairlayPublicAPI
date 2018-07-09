@@ -1,13 +1,7 @@
 import json
 import socket
-import gzip
-import StringIO
-import base64
-import sys
 import time
 import datetime
-import threading
-
 import requests
 
 def convert_ticks_to_datetime(s):
@@ -216,5 +210,5 @@ class FairlayPythonPublic(object):
             response = self.__public_request('comps/{}'.format(categoryID))
         except ValueError:
             return []
-            
+
         return response
